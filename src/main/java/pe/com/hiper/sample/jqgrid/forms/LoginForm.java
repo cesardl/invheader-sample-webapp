@@ -15,7 +15,11 @@ import org.apache.struts.action.ActionMessage;
  */
 public class LoginForm extends org.apache.struts.action.ActionForm {
 
-    private String name;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7670963446969934211L;
+	private String name;
     private String email;
     /**
      * Error message

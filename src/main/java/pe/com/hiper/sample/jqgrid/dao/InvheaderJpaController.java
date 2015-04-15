@@ -21,7 +21,12 @@ import pe.com.hiper.sample.jqgrid.entidad.Invheader;
  */
 public class InvheaderJpaController implements Serializable {
 
-    public InvheaderJpaController(EntityManagerFactory emf) {
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 2547017897935165990L;
+
+	public InvheaderJpaController(EntityManagerFactory emf) {
         this.emf = emf;
     }
     private EntityManagerFactory emf = null;
