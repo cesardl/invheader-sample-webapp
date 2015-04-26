@@ -3,6 +3,10 @@ package pe.com.hiper.sample.jqgrid.dao.exceptions;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 
+ * @author Cesardl
+ */
 public class IllegalOrphanException extends Exception {
 
     private final List<String> messages;

@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package pe.com.hiper.sample.jqgrid.entidad;
 
 import java.io.Serializable;
@@ -20,8 +16,8 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 /**
- *
- * @author pdiaz
+ * 
+ * @author Cesardl
  */
 @Entity
 @Table(name = "invheader")

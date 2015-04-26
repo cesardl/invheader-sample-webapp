@@ -8,3 +8,4 @@ target/
 
 # NetBeans
 nb-configuration.xml
+nbactions.xml

@@ -1,7 +1,7 @@
 <%-- 
     Document   : success
     Created on : 10/05/2013, 02:05:49 PM
-    Author     : pdiaz
+    Author     : Cesardl
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

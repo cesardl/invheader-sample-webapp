@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package pe.com.hiper.sample.jqgrid.forms;
 
 import javax.servlet.http.HttpServletRequest;
@@ -11,15 +7,15 @@ import org.apache.struts.action.ActionMessage;
 
 /**
  *
- * @author pdiaz
+ * @author Cesardl
  */
 public class LoginForm extends org.apache.struts.action.ActionForm {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 7670963446969934211L;
-	private String name;
+    /**
+     *
+     */
+    private static final long serialVersionUID = 7670963446969934211L;
+    private String name;
     private String email;
     /**
      * Error message
