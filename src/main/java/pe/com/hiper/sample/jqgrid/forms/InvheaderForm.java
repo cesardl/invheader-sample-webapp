@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package pe.com.hiper.sample.jqgrid.forms;
 
 import javax.servlet.http.HttpServletRequest;
@@ -11,7 +7,7 @@ import org.apache.struts.action.ActionMessage;
 
 /**
  *
- * @author s22023
+ * @author Cesardl
  */
 public class InvheaderForm extends org.apache.struts.action.ActionForm {
 
@@ -24,7 +20,6 @@ public class InvheaderForm extends org.apache.struts.action.ActionForm {
      */
     public InvheaderForm() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
     public String getAmount() {

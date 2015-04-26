@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package pe.com.hiper.sample.jqgrid.actions;
 
 import com.google.gson.Gson;
@@ -23,7 +19,7 @@ import pe.com.hiper.sample.jqgrid.forms.InvheaderForm;
 
 /**
  *
- * @author s22023
+ * @author Cesardl
  */
 public class InvheaderAction extends DispatchAction {
 
@@ -40,6 +36,8 @@ public class InvheaderAction extends DispatchAction {
 
         HttpSession session = request.getSession();
         session.setAttribute("invheaders", invheaders);
+        
+        response.setContentType("application/json");
         PrintWriter out = response.getWriter();
         out.println(json);
         out.flush();
@@ -56,7 +54,7 @@ public class InvheaderAction extends DispatchAction {
         List<Invheader> invheaders = (List<Invheader>) session.getAttribute("invheaders");
         Invheader invheader = invheaders.get(index - 1);
 
-        System.out.println(invheader);
+        log.info(invheader);
         session.setAttribute("invheader", invheader);
 
         return mapping.findForward(LOADINV);
@@ -106,7 +104,7 @@ public class InvheaderAction extends DispatchAction {
         String json = gson.toJson(invheader);
         out.println(json);
         out.flush();
-        System.out.println("updated: " + json);
+        log.info("updated: " + json);
         return null;
     }
 }

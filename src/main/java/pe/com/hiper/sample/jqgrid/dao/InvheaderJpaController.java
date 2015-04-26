@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package pe.com.hiper.sample.jqgrid.dao;
 
 import java.io.Serializable;
@@ -17,16 +13,16 @@ import pe.com.hiper.sample.jqgrid.entidad.Invheader;
 
 /**
  *
- * @author s22023
+ * @author Cesardl
  */
 public class InvheaderJpaController implements Serializable {
 
     /**
-	 * 
-	 */
-	private static final long serialVersionUID = 2547017897935165990L;
+     *
+     */
+    private static final long serialVersionUID = 2547017897935165990L;
 
-	public InvheaderJpaController(EntityManagerFactory emf) {
+    public InvheaderJpaController(EntityManagerFactory emf) {
         this.emf = emf;
     }
     private EntityManagerFactory emf = null;
@@ -138,5 +134,5 @@ public class InvheaderJpaController implements Serializable {
             em.close();
         }
     }
-    
+
 }
