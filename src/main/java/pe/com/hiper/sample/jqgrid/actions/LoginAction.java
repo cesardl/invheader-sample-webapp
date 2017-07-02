@@ -26,7 +26,7 @@ public class LoginAction extends Action {
      * @param request The HTTP Request we are processing.
      * @param response The HTTP Response we are processing.
      * @throws java.lang.Exception
-     * @return
+     * @return an action forward
      */
     @Override
     public ActionForward execute(ActionMapping mapping, ActionForm form,

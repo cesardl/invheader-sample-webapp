@@ -2,6 +2,8 @@ package pe.com.hiper.sample.jqgrid.actions;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
+
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.math.BigDecimal;
 import java.util.List;
@@ -14,6 +16,7 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.actions.DispatchAction;
 import pe.com.hiper.sample.jqgrid.dao.InvheaderJpaController;
+import pe.com.hiper.sample.jqgrid.dao.exceptions.NonexistentEntityException;
 import pe.com.hiper.sample.jqgrid.entidad.Invheader;
 import pe.com.hiper.sample.jqgrid.forms.InvheaderForm;
 
@@ -27,8 +30,7 @@ public class InvheaderAction extends DispatchAction {
     private final InvheaderJpaController inveaderDAO = new InvheaderJpaController(Persistence.createEntityManagerFactory("jgGridPU"));
 
     public ActionForward listarInvheader(ActionMapping mapping, ActionForm form,
-            HttpServletRequest request, HttpServletResponse response)
-            throws Exception {
+            HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         List<Invheader> invheaders = inveaderDAO.findInvheaderEntities();
         Gson gson = new Gson();
@@ -46,8 +48,7 @@ public class InvheaderAction extends DispatchAction {
     }
 
     public ActionForward loadInv(ActionMapping mapping, ActionForm form,
-            HttpServletRequest request, HttpServletResponse response)
-            throws Exception {
+            HttpServletRequest request, HttpServletResponse response) {
 
         int index = Integer.parseInt(request.getParameter("invid"));
         HttpSession session = request.getSession();
@@ -61,8 +62,7 @@ public class InvheaderAction extends DispatchAction {
     }
 
     public ActionForward edit(ActionMapping mapping, ActionForm form,
-            HttpServletRequest request, HttpServletResponse response)
-            throws Exception {
+            HttpServletRequest request, HttpServletResponse response) throws IOException, NonexistentEntityException {
 
         InvheaderForm invheaderForm = (InvheaderForm) form;
 

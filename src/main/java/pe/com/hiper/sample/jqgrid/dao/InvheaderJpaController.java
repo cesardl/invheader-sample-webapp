@@ -45,14 +45,14 @@ public class InvheaderJpaController implements Serializable {
         }
     }
 
-    public void edit(Invheader invheader) throws NonexistentEntityException, Exception {
+    public void edit(Invheader invheader) throws NonexistentEntityException {
         EntityManager em = null;
         try {
             em = getEntityManager();
             em.getTransaction().begin();
             invheader = em.merge(invheader);
             em.getTransaction().commit();
-        } catch (Exception ex) {
+        } catch (RuntimeException ex) {
             String msg = ex.getLocalizedMessage();
             if (msg == null || msg.length() == 0) {
                 Integer id = invheader.getInvid();
