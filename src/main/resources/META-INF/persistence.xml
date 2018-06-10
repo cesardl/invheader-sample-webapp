@@ -1,14 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+
     <persistence-unit name="jgGridPU" transaction-type="RESOURCE_LOCAL">
+
         <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
         <class>pe.com.hiper.sample.jqgrid.entidad.Invheader</class>
         <exclude-unlisted-classes>false</exclude-unlisted-classes>
+
         <properties>
-            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/invheader"/>
-            <property name="javax.persistence.jdbc.user" value="root"/>
-            <property name="javax.persistence.jdbc.password" value="rootroot"/>
+            <property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbc.JDBCDriver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:mem:invheader"/>
+            <property name="javax.persistence.jdbc.user" value="SA"/>
+            <property name="javax.persistence.jdbc.password" value="0123456789"/>
+
+            <property name="eclipselink.target-database" value="HSQL"/>
+            <!--property name="eclipselink.ddl-generation" value="create-tables"/>
+            <property name="eclipselink.ddl-generation.output-mode" value="both"/-->
+            <property name="eclipselink.session.customizer" value="pe.com.hiper.sample.jqgrid.config.ImportSQL"/>
+            <property name="import.sql.file" value="src/main/resources/META-INF/sql/invheader_hsqldb.sql"/>
+
+            <!--
+            <property name="javax.persistence.database-product-name	" value="HSQL"/>
+            <property name="javax.persistence.schema-generation.database.action" value="create"/>
+            <property name="javax.persistence.schema-generation.create-source" value="script"/>
+            <property name="javax.persistence.sql-load-script-source" value="META-INF/sql/invheader_hsqldb.sql"/>
+            -->
+
+            <property name="show_sql" value="true"/>
+            <property name="eclipselink.weaving" value="false"/>
+            <property name="eclipselink.logging.level" value="FINE"/>
         </properties>
     </persistence-unit>
 </persistence>

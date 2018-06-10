@@ -15,7 +15,7 @@
     </global-exceptions>
 
     <global-forwards>
-        <forward name="welcome"  path="/Welcome.do"/>
+        <forward name="welcome"  path="/login.do"/>
     </global-forwards>
 
     <action-mappings>
